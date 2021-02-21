@@ -1,22 +1,17 @@
-import React from 'react'
-import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
-import Button from '@material-ui/core/Button'
-import ProTip from '../components/ProTip'
-import Link from '../components/Link'
-import Copyright from '../components/Copyright'
+import Layout from '../components/Layout'
+import PageBody from '../components/PageBody'
+import { useTheme } from '@material-ui/core/styles'
 
 export default function About () {
+  const theme = useTheme()
+  const pageColor = theme.palette.secondary.main
+
   return (
-    <Container maxWidth='sm'>
-      <Typography variant='h4' component='h1' gutterBottom>
-        Next.js v5-alpha example
-      </Typography>
-      <Button variant='contained' component={Link} naked href='/'>
-        Go to the main page
-      </Button>
-      <ProTip />
-      <Copyright />
-    </Container>
+    <Layout>
+      <PageBody bgColor={pageColor}>
+        <Typography variant='h1' fontWeight={700}>About</Typography>
+      </PageBody>
+    </Layout>
   )
 }
